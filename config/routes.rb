@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :authors
   resources :books, only: [:show, :index]
   resources :users
   resources :user_sessions
