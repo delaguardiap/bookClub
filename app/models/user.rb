@@ -6,4 +6,9 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true, if: -> { new_record? || changes["password"] }
 
   validates :email, uniqueness: true
+
+  def is_admin?
+  	self.admin
+  end
+
 end
