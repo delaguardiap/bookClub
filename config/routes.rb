@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :books
   root "user_sessions#new"
   resources :users
   resources :user_sessions
