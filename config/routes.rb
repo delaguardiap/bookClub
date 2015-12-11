@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :books
-  root "user_sessions#new"
+  resources :books, only: [:show, :index]
   resources :users
   resources :user_sessions
+
+  root "user_sessions#new"
 
   get 'login' => 'user_sessions#new', as: :login
   post 'logout' => 'user_sessions#destroy', as: :logout
